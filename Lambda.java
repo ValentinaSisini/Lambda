@@ -10,15 +10,19 @@ public class Lambda {
       stampa(a);
       
       List<Integer> b;
-      b = doppi(a);
+      b = multipli(a, 2);
       stampa(b);
+
+      List<Integer> c;
+      c = multipli(a, 3);
+      stampa(c);
     }
 
-    private static List<Integer> doppi(List<Integer> a) {
+    private static List<Integer> multipli(List<Integer> a, int moltiplicatore) {
         List<Integer> b;
         b = new ArrayList<Integer>();
           for(Integer e:a)
-            b.add(e*2);
+            b.add(e*moltiplicatore);
         return b;
     }
 
