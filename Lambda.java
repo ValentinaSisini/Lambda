@@ -9,10 +9,17 @@ public class Lambda {
       }
       stampa(a);
       
-      List<Integer> b = new ArrayList<Integer>();
-      for(Integer e:a)
-        b.add(e*2);
+      List<Integer> b;
+      b = doppi(a);
       stampa(b);
+    }
+
+    private static List<Integer> doppi(List<Integer> a) {
+        List<Integer> b;
+        b = new ArrayList<Integer>();
+          for(Integer e:a)
+            b.add(e*2);
+        return b;
     }
 
     public static void stampa(List<Integer> a) {
