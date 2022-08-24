@@ -9,35 +9,35 @@ public class Lambda {
       }
       stampa(a);
       
-      List<Integer> b;
-      b = multipli(a, 2);
+      List<Integer> b = f(a, Lambda::doppio);
       stampa(b);
 
-      List<Integer> c;
-      c = multipli(a, 3);
+      List<Integer> c = f(a, Lambda::triplo);
       stampa(c);
 
-      List<Integer> d;
-      d = quadrati(a);
+      List<Integer> d = f(a, Lambda::quadrato);
       stampa(d);
     }
 
-    private static List<Integer> multipli(List<Integer> a, int moltiplicatore) {
+    static Integer doppio(Integer n) {
+      return 2*n;
+    }
+
+    static Integer triplo(Integer n) {
+      return 3*n;
+    }
+
+    static Integer quadrato(Integer n) {
+      return n*n;
+    }
+
+    private static List<Integer> f(List<Integer> a, Funzione g) {
       List<Integer> b;
       b = new ArrayList<Integer>();
         for(Integer e:a)
-          b.add(e*moltiplicatore);
+          b.add(g.applica(e));
       return b;
   }
-
-  private static List<Integer> quadrati(List<Integer> a) {
-    List<Integer> b;
-    b = new ArrayList<Integer>();
-      for(Integer e:a)
-        b.add(e*e);
-    return b;
-}
-
 
     public static void stampa(List<Integer> a) {
       for(Integer e: a) {
