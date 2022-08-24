@@ -16,15 +16,28 @@ public class Lambda {
       List<Integer> c;
       c = multipli(a, 3);
       stampa(c);
+
+      List<Integer> d;
+      d = quadrati(a);
+      stampa(d);
     }
 
     private static List<Integer> multipli(List<Integer> a, int moltiplicatore) {
-        List<Integer> b;
-        b = new ArrayList<Integer>();
-          for(Integer e:a)
-            b.add(e*moltiplicatore);
-        return b;
-    }
+      List<Integer> b;
+      b = new ArrayList<Integer>();
+        for(Integer e:a)
+          b.add(e*moltiplicatore);
+      return b;
+  }
+
+  private static List<Integer> quadrati(List<Integer> a) {
+    List<Integer> b;
+    b = new ArrayList<Integer>();
+      for(Integer e:a)
+        b.add(e*e);
+    return b;
+}
+
 
     public static void stampa(List<Integer> a) {
       for(Integer e: a) {
