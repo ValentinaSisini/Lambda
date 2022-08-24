@@ -9,13 +9,13 @@ public class Lambda {
       }
       stampa(a);
       
-      List<Integer> b = f(a, Lambda::doppio);
+      List<Integer> b = map(a, Lambda::doppio);
       stampa(b);
 
-      List<Integer> c = f(a, Lambda::triplo);
+      List<Integer> c = map(a, Lambda::triplo);
       stampa(c);
 
-      List<Integer> d = f(a, Lambda::quadrato);
+      List<Integer> d = map(a, Lambda::quadrato);
       stampa(d);
     }
 
@@ -31,10 +31,10 @@ public class Lambda {
       return n*n;
     }
 
-    private static List<Integer> f(List<Integer> a, Funzione g) {
-      List<Integer> b;
-      b = new ArrayList<Integer>();
-        for(Integer e:a)
+    private static<T1,T2> List<T2> map(List<T1> a, Funzione<T1,T2> g) {
+      List<T2> b;
+      b = new ArrayList<T2>();
+        for(T1 e:a)
           b.add(g.applica(e));
       return b;
   }

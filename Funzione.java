@@ -1,3 +1,3 @@
-public interface Funzione {
-    Integer applica(Integer n);
+public interface Funzione<T1,T2> {
+    T2 applica(T1 n);
 }
