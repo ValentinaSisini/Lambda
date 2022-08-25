@@ -9,26 +9,14 @@ public class Lambda {
       }
       stampa(a);
       
-      List<Integer> b = map(a, Lambda::doppio);
+      List<Integer> b = map(a, n -> 2*n); //Lambda expression
       stampa(b);
 
-      List<Integer> c = map(a, Lambda::triplo);
+      List<Integer> c = map(a, n -> 3*n); //Lambda expression
       stampa(c);
 
-      List<Integer> d = map(a, Lambda::quadrato);
+      List<Integer> d = map(a, n -> n*n); //Lambda expression
       stampa(d);
-    }
-
-    static Integer doppio(Integer n) {
-      return 2*n;
-    }
-
-    static Integer triplo(Integer n) {
-      return 3*n;
-    }
-
-    static Integer quadrato(Integer n) {
-      return n*n;
     }
 
     private static<T1,T2> List<T2> map(List<T1> a, Funzione<T1,T2> g) {
@@ -40,10 +28,10 @@ public class Lambda {
   }
 
     public static void stampa(List<Integer> a) {
-      for(Integer e: a) {
+      a.forEach(e -> {
         System.out.print(e);
         System.out.print(" ");
-      }
+      });
       System.out.println();
     }
 }
